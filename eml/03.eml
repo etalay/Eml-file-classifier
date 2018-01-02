@@ -1,0 +1,607 @@
+Return-Path: <jis_1755_ifeahi_egcfc@info.cine-news.fr>
+Received: from mailimailo.univ-rennes1.fr ([unix socket])
+	 by mailimailo.univ-rennes1.fr (Cyrus v2.3.16-Fedora-RPM-2.3.16-6.el6_2.5) with LMTPA;
+	 Wed, 22 Mar 2017 18:52:35 +0100
+X-Sieve: CMU Sieve 2.3
+Received: from mailout2.univ-rennes1.fr (mailout2.univ-rennes1.fr [129.20.129.120])
+	by mailimailo.univ-rennes1.fr (Postfix) with ESMTP id 2D5FE2CC
+	for <resp-m2-miage@univ-rennes1.fr>; Wed, 22 Mar 2017 18:52:35 +0100 (CET)
+Received: from localhost (vmscanmail.univ-rennes1.fr [129.20.128.134])
+	by vmrelais.univ-rennes1.fr (Postfix) with ESMTP id 2912D602F4
+	for <resp-m2-miage@univ-rennes1.fr>; Wed, 22 Mar 2017 18:52:35 +0100 (CET)
+X-Virus-Scanned: amavisd-new at univ-rennes1.fr
+Received: from mailout2.univ-rennes1.fr ([129.20.129.120])
+	by localhost (vmscanmail.univ-rennes1.fr [129.20.128.134]) (amavisd-new, port 10026)
+	with ESMTP id D_slDc6hmnDW for <resp-m2-miage@univ-rennes1.fr>;
+	Wed, 22 Mar 2017 18:52:35 +0100 (CET)
+Received: from vmmailin.univ-rennes1.fr (vmmailin.univ-rennes1.fr [129.20.128.133])
+	by vmrelais.univ-rennes1.fr (Postfix) with ESMTP id 099CA60291
+	for <resp-m2-miage@univ-rennes1.fr>; Wed, 22 Mar 2017 18:52:35 +0100 (CET)
+Received: from mxb1-2.relay.renater.fr (mxb1-2.relay.renater.fr [194.214.201.9])
+	by vmmailin.univ-rennes1.fr (Postfix) with ESMTP id 0046120033
+	for <resp-m2-miage@univ-rennes1.fr>; Wed, 22 Mar 2017 18:52:34 +0100 (CET)
+Received: from mail602.info.cine-news.fr (mail602.info.cine-news.fr [149.202.249.119])
+	(using TLSv1.2 with cipher ADH-CAMELLIA256-SHA (256/256 bits))
+	(No client certificate requested)
+	by mxb1-2.relay.renater.fr (asm) with ESMTPS id F2540284A58
+	for <resp-m2-miage@univ-rennes1.fr>; Wed, 22 Mar 2017 18:08:28 +0100 (CET)
+From: "=?utf-8?B?Q2VudGVyIFBhcmNz?=" <marie@info.cine-news.fr>
+To: resp-m2-miage@univ-rennes1.fr
+Reply-To: "=?utf-8?B?Q2VudGVyIFBhcmNz?=" <newsletter@info.cine-news.fr>
+Subject: =?utf-8?B?8J+QpSBQw6JxdWVzIGVuIGZhbWls?=
+ =?utf-8?B?bGUgcG91ciBtb2lucyBkZSAyNTDigqwgIQ==?=
+Date: Wed, 22 Mar 2017 18:09:08 +0100
+Message-ID: <20170322-170908-13633875888@info.cine-news.fr>
+List-Unsubscribe: <mailto:abuse@info.cine-news.fr?subject=13633875888>
+X-MAILER:TDL3
+X-CAMPAGNEID: 854078
+X-MESSAGID: 13633875888
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+	d=info.cine-news.fr; s=mail;
+	h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type;
+	bh=UqOjSRdyhd3x08B0/ONirfYv2YIt7nbmLtp6kQwH/AI=;
+	b=RCYS4fWkbrf4HhS6zeyMSR8dYSZtjJifu9n0ScqrcVpPv6pJKGvGU+PZHjMt4aJK
+		fRERhcGX2Eg3XCibIrYGiZmJ5QqGnjLsUba/9oJmg7kzWpO7ejQaHPe437k3bPcF
+		P43aX5iDFb5ywc1Gfct+4rTLBSoVxDMgnFWExKsULi8=
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+	boundary="--=d37491f3_9566_4d87_8aa2_8acabb07a4f8"
+X-UCE-Status: YES
+X-UCE-Type: MCE
+X-Original-Source-IP: 149.202.249.119
+X-Bizanga: IMP - mxb1-2.relay.renater.fr
+X-Renater-SpamState: 11
+X-Renater-SpamScore: 17
+X-Renater-SpamCause: gggruggvucftvghtrhhoucdtuddrfeelhedrjedugddutddtucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecutffgpfetvffgtfdpggftfghnshhusghstghrihgsvgenuceurghilhhouhhtmecufedttdenucdnofetkffnkffpifculddujedmnecujfgurhephffvrhfufffkjffogggtsehmtderreertdejnecuhfhrohhmpedfvegvnhhtvghrucfrrghrtghsfdcuoehmrghrihgvsehinhhfohdrtghinhgvqdhnvgifshdrfhhrqeenucffohhmrghinheptghinhgvqdhnvgifshdrfhhrpdgtvghnthgvrhhprghrtghsrdhfrhenucfkphepudegledrvddtvddrvdegledrudduleenucfrrghrrghmpehmohguvgepshhmthhppdhhvghlohepmhgrihhliedtvddrihhnfhhordgtihhnvgdqnhgvfihsrdhfrhdpihhnvghtpedugeelrddvtddvrddvgeelrdduudelpdhmrghilhhfrhhomhepjhhishgpudejheehpghifhgvrghhihgpvghgtghftgesihhnfhhordgtihhnvgdqnhgvfihsrdhfrhdprhgtphhtthhopehrvghsphdqmhdvqdhmihgrghgvsehunhhivhdqrhgvnhhnvghsuddrfhhr 
+X-Renater-ServerName: mxb1-2.relay.renater.fr
+
+----=d37491f3_9566_4d87_8aa2_8acabb07a4f8
+Content-Type: multipart/alternative;
+	boundary="--=86df817e_5299_4ed4_89dc_8ea534e351f4"
+
+----=86df817e_5299_4ed4_89dc_8ea534e351f4
+Content-Type: text/plain;charset="utf-8"
+Content-Transfer-Encoding: Quoted-Printable
+
+http://stats.info.cine-news.fr/m/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty=
+7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm
+
+----=86df817e_5299_4ed4_89dc_8ea534e351f4
+Content-Type: text/html;charset="utf-8"
+Content-Transfer-Encoding: Quoted-Printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://=
+www.w3.org/TR/html4/loose.dtd">
+<html>=0A<head>
+<meta http-equiv=3D"content-type" content=3D"text/html; charset=3Dutf-8=
+" />=0A	<title>&nbsp;</title>=0A	<base target=3D"_blank" />=0A</head>=0A=
+<body leftmargin=3D"0" marginheight=3D"0" marginwidth=3D"0" rightmargin=
+=3D"0" topmargin=3D"0"><table width=3D"100%" border=3D"0" cellspacing=3D=
+"0" cellpadding=3D"0"  >=20
+<tr>  <td  align=3D"center" >
+<font face=3D"Verdana" style=3D"font-size:10px" color=3D"#000000" >
+Si vous ne parvenez pas &agrave; lire ce message,=20
+<a style=3D"text-decoration:underline" href=3D"http://stats.info.cine-n=
+ews.fr/m/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b=
+5JmxFoSr69vA8aQr_2fZY_3d/i.htm" target=3D"_blank" >
+<font face=3D"Verdana" style=3D"font-size:10px" color=3D"#000000">
+suivez ce lien</font></a>
+</font></td>  </tr>
+</table><table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0"  >=20
+<tr>  <td  align=3D"center" >
+<font face=3D"Verdana" style=3D"font-size:10px" color=3D"#000000" >
+Pour vous d&eacute;sinscrire,=20
+<a style=3D"text-decoration:underline" href=3D"http://stats.info.cine-n=
+ews.fr/ur/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2=
+b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" target=3D"_blank" >
+<font face=3D"Verdana" style=3D"font-size:10px" color=3D"#000000">
+suivez ce lien</font></a>
+</font></td>  </tr>
+</table>=0A<style type=3D"text/css">.ReadMsgBody { width: 100%;backgrou=
+nd-color: #ffffff;}=0A         .ExternalClass {width: 100%;background-c=
+olor: #ffffff;}=0A         td { border-collapse: collapse; }=0A        =
+ img {outline:none; text-decoration:none; -ms-interpolation-mode: bicub=
+ic;}=0A         a img {border:none;}=0A         body{background-color: =
+#f1f1f1;}=0A         .ExternalClass * {line-height: 100%;}=0A         .=
+hide {display:none;}=0A</style>=0A<center>=0A<table align=3D"center" bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"550">=0A	<tbody=
+>=0A		<tr>=0A			<td bgcolor=3D"#ffffff" height=3D"26" style=3D"text-ali=
+gn:center;background-color:#ffffff;" width=3D"550"><a href=3D"http://st=
+ats.info.cine-news.fr/l/62575310/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty=
+7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-d=
+ecoration:none;"><font style=3D"font-family: Helvetica,Arial; font-size=
+:9px; color:#58b013; text-decoration:underline;"><b>C&eacute;l&eacute;b=
+rez Paques en famille : cottage 4 pers. en pleine nature d&egrave;s 299=
+ &euro; =2B 3 activit&eacute;s offertes !</b> </font> </a></td>=0A		</t=
+r>=0A	</tbody>=0A</table>=0A=0A<table align=3D"center" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" width=3D"550">=0A	<tbody>=0A		<tr>=0A	=
+		<td bgcolor=3D"#ffffff" style=3D"text-align:left;background-color:#ff=
+ffff;"><a href=3D"http://stats.info.cine-news.fr/l/62575311/0IbEyYU_2bG=
+2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZ=
+Y_3d/i.htm" style=3D"text-decoration:none;color:#58b013;font-size:10px;=
+font-family:Helvetica,Arial,sans-serif;"><img alt=3D"CENTERPARCS" borde=
+r=3D"0" height=3D"82" src=3D"http://stats.info.cine-news.fr//o/0IbEyYU_=
+2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_=
+2fZY_3d/o.gif" style=3D"display:block" width=3D"98" /></a></td>=0A			<t=
+d bgcolor=3D"#ffffff" height=3D"83" style=3D"text-align:left; padding-l=
+eft: 22px; background-color:#ffffff;" width=3D"452"><a href=3D"http://s=
+tats.info.cine-news.fr/l/62575312/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lt=
+y7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-=
+decoration:none;"><font style=3D"font-family: Helvetica, Arial ; font-s=
+ize:26px; color:#00652f; text-decoration:none;">C&eacute;l&eacute;brez =
+P&acirc;ques en famille ! </font> </a></td>=0A		</tr>=0A	</tbody>=0A</t=
+able>=0A=0A<table align=3D"center" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" width=3D"550">=0A	<tbody>=0A		<tr>=0A			<td bgcolor=3D"#ff=
+ffff" style=3D"text-align:center;background-color:#ffffff;"><a href=3D"=
+http://stats.info.cine-news.fr/l/62575313/0IbEyYU_2bG2hq8KYlcrqFc6KOfDL=
+BM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D=
+"text-decoration:none;"><img  border=3D"0" height=3D"36" src=3D"http://=
+assets.vftraining.net/LANDINGS/FR/centerparcs/2017-03-15/images2/img04.=
+jpg" style=3D"display:block" width=3D"91" /></a></td>=0A			<td bgcolor=3D=
+"#58b013" height=3D"36" style=3D"text-align:center;background-color:#58=
+b013;" width=3D"55"><a href=3D"http://stats.info.cine-news.fr/l/6257531=
+4/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoS=
+r69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoration:none;"><font style=3D=
+"font-family: Arial, Helvetica; font-size:9px; text-transform: uppercas=
+e; color:#ffffff; text-decoration:none;">ACCUEIL </font> </a></td>=0A		=
+	<td bgcolor=3D"#58b013" height=3D"36" style=3D"text-align:center;backg=
+round-color:#58b013;" width=3D"57"><a href=3D"http://stats.info.cine-ne=
+ws.fr/l/62575315/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7=
+XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoration:none;"=
+><font style=3D"font-family: Arial, Helvetica; font-size:9px; text-tran=
+sform: uppercase; color:#ffffff; text-decoration:none;">OFFRES </font> =
+</a></td>=0A			<td bgcolor=3D"#58b013" height=3D"36" style=3D"text-alig=
+n:center;background-color:#58b013;" width=3D"67"><a href=3D"http://stat=
+s.info.cine-news.fr/l/62575316/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7G=
+WPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-dec=
+oration:none;"><font style=3D"font-family: Arial, Helvetica; font-size:=
+9px; text-transform: uppercase; color:#ffffff; text-decoration:none;">D=
+OMAINES </font> </a></td>=0A			<td bgcolor=3D"#58b013" height=3D"36" st=
+yle=3D"text-align:center;background-color:#58b013;" width=3D"68"><a hre=
+f=3D"http://stats.info.cine-news.fr/l/62575317/0IbEyYU_2bG2hq8KYlcrqFc6=
+KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" s=
+tyle=3D"text-decoration:none;"><font style=3D"font-family: Arial, Helve=
+tica; font-size:9px; text-transform: uppercase; color:#ffffff; text-dec=
+oration:none;">COTTAGES </font> </a></td>=0A			<td bgcolor=3D"#58b013" =
+height=3D"36" style=3D"text-align:center;background-color:#58b013;" wid=
+th=3D"64"><a href=3D"http://stats.info.cine-news.fr/l/62575318/0IbEyYU_=
+2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_=
+2fZY_3d/i.htm" style=3D"text-decoration:none;"><font style=3D"font-fami=
+ly: Arial, Helvetica; font-size:9px; text-transform: uppercase; color:#=
+ffffff; text-decoration:none;">ACTIVIT&eacute;S </font> </a></td>=0A			=
+<td bgcolor=3D"#58b013" height=3D"36" style=3D"text-align:center;backgr=
+ound-color:#58b013;" width=3D"68"><a href=3D"http://stats.info.cine-new=
+s.fr/l/62575319/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7X=
+gaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoration:none;">=
+<font style=3D"font-family: Arial, Helvetica; font-size:9px; text-trans=
+form: uppercase; color:#ffffff; text-decoration:none;">MAGAZINE </font>=
+ </a></td>=0A			<td><img  height=3D"36" src=3D"http://assets.vftraining=
+.net/LANDINGS/FR/centerparcs/2017-03-15/images2/img11.jpg" style=3D"dis=
+play:block" width=3D"80" /></td>=0A		</tr>=0A	</tbody>=0A</table>=0A=0A=
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"550">=0A	<tbody>=0A		<tr>=0A			<td bgcolor=3D"#ffffff" style=
+=3D"text-align:center;background-color:#ffffff;"><a href=3D"http://stat=
+s.info.cine-news.fr/l/62575320/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7G=
+WPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-dec=
+oration:none;"><img  border=3D"0" height=3D"70" src=3D"http://assets.vf=
+training.net/LANDINGS/FR/centerparcs/2017-03-15/images2/img12.jpg" styl=
+e=3D"display:block" width=3D"550" /></a></td>=0A		</tr>=0A	</tbody>=0A<=
+/table>=0A=0A<table align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" width=3D"550">=0A	<tbody>=0A		<tr>=0A			<td bgcolor=3D"#=
+ffffff" style=3D"text-align:center;background-color:#ffffff;"><a href=3D=
+"http://stats.info.cine-news.fr/l/62575321/0IbEyYU_2bG2hq8KYlcrqFc6KOfD=
+LBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=
+=3D"text-decoration:none;"><img  border=3D"0" height=3D"34" src=3D"http=
+://assets.vftraining.net/LANDINGS/FR/centerparcs/2017-03-15/images2/img=
+13.jpg" style=3D"display:block" width=3D"52" /></a></td>=0A			<td bgcol=
+or=3D"#016631" height=3D"34" style=3D"text-align:center;background-colo=
+r:#016631;" width=3D"80"><a href=3D"http://stats.info.cine-news.fr/l/62=
+575322/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5J=
+mxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoration:none;"><font sty=
+le=3D"font-family: Arial black, Helvetica; font-size:12px; line-height:=
+ 14px; text-transform: uppercase; color:#ffffff; text-decoration:none;"=
+>VACANCES<br />=0A			DE P&Acirc;QUES </font> </a></td>=0A			<td bgcolor=
+=3D"#ffffff" style=3D"text-align:left;background-color:#ffffff;"><a hre=
+f=3D"http://stats.info.cine-news.fr/l/62575323/0IbEyYU_2bG2hq8KYlcrqFc6=
+KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" s=
+tyle=3D"text-decoration:none;color:#58b013;font-size:15px;font-family:H=
+elvetica,Arial,sans-serif;"><img alt=3D"LES JOURN&Eacute;ES" border=3D"=
+0" height=3D"34" src=3D"http://assets.vftraining.net/LANDINGS/FR/center=
+parcs/2017-03-15/images2/img15.jpg" style=3D"display:block" width=3D"41=
+8" /></a></td>=0A		</tr>=0A	</tbody>=0A</table>=0A=0A<table align=3D"ce=
+nter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"550">=0A=
+	<tbody>=0A		<tr>=0A			<td bgcolor=3D"#ffffff" style=3D"text-align:cent=
+er;background-color:#ffffff;"><a href=3D"http://stats.info.cine-news.fr=
+/l/62575324/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt=
+_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoration:none;"><img=
+  border=3D"0" height=3D"3" src=3D"http://assets.vftraining.net/LANDING=
+S/FR/centerparcs/2017-03-15/images2/img16.jpg" style=3D"display:block" =
+width=3D"550" /></a></td>=0A		</tr>=0A	</tbody>=0A</table>=0A=0A<table =
+align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"550">=0A	<tbody>=0A		<tr>=0A			<td bgcolor=3D"#ffffff" style=3D"tex=
+t-align:center;background-color:#ffffff;"><a href=3D"http://stats.info.=
+cine-news.fr/l/62575325/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4p=
+KW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoration=
+:none;"><img  border=3D"0" height=3D"16" src=3D"http://assets.vftrainin=
+g.net/LANDINGS/FR/centerparcs/2017-03-15/images2/img17.jpg" style=3D"di=
+splay:block" width=3D"37" /></a></td>=0A			<td bgcolor=3D"#ffffff" heig=
+ht=3D"16" style=3D"text-align:right;background-color:#ffffff;" width=3D=
+"84"><a href=3D"http://stats.info.cine-news.fr/l/62575326/0IbEyYU_2bG2h=
+q8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_=
+3d/i.htm" style=3D"text-decoration:none;"><font style=3D"font-family: A=
+rial black, Helvetica; font-size:9px; color:#016631; padding-right: 4px=
+; text-decoration:none;">&agrave; partir de </font> </a></td>=0A			<td =
+bgcolor=3D"#ffffff" style=3D"text-align:center;background-color:#ffffff=
+;"><a href=3D"http://stats.info.cine-news.fr/l/62575327/0IbEyYU_2bG2hq8=
+KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d=
+/i.htm" style=3D"text-decoration:none;"><img  border=3D"0" height=3D"16=
+" src=3D"http://assets.vftraining.net/LANDINGS/FR/centerparcs/2017-03-1=
+5/images2/img19.jpg" style=3D"display:block" width=3D"22" /></a></td>=0A=
+			<td bgcolor=3D"#01a5cb" height=3D"16" style=3D"text-align:center;bac=
+kground-color:#01a5cb;" width=3D"85"><a href=3D"http://stats.info.cine-=
+news.fr/l/62575328/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zq=
+J7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoration:none=
+;"><font style=3D"font-family: Arial, Helvetica; font-size:13px; text-t=
+ransform: uppercase; color:#ffffff; text-decoration:none;"><b>PETITS PR=
+IX</b> </font> </a></td>=0A			<td bgcolor=3D"#ffffff" style=3D"text-ali=
+gn:center;background-color:#ffffff;"><a href=3D"http://stats.info.cine-=
+news.fr/l/62575329/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zq=
+J7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoration:none=
+;"><img  border=3D"0" height=3D"16" src=3D"http://assets.vftraining.net=
+/LANDINGS/FR/centerparcs/2017-03-15/images2/img21.jpg" style=3D"display=
+:block" width=3D"322" /></a></td>=0A		</tr>=0A	</tbody>=0A</table>=0A=0A=
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"550">=0A	<tbody>=0A		<tr>=0A			<td bgcolor=3D"#ffffff" style=
+=3D"text-align:center;background-color:#ffffff;"><a href=3D"http://stat=
+s.info.cine-news.fr/l/62575330/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7G=
+WPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-dec=
+oration:none;"><img  border=3D"0" height=3D"43" src=3D"http://assets.vf=
+training.net/LANDINGS/FR/centerparcs/2017-03-15/images2/img22.jpg" styl=
+e=3D"display:block" width=3D"33" /></a></td>=0A			<td bgcolor=3D"#fffff=
+f" height=3D"43" style=3D"text-align:center;background-color:#ffffff;" =
+width=3D"109"><a href=3D"http://stats.info.cine-news.fr/l/62575331/0IbE=
+yYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8=
+aQr_2fZY_3d/i.htm" style=3D"text-decoration:none;"><font style=3D"font-=
+family: Arial , Helvetica; font-size:36px; color:#016631; text-decorati=
+on:none;"><b>249&euro;</b> </font> </a></td>=0A			<td bgcolor=3D"#fffff=
+f" style=3D"text-align:center;background-color:#ffffff;"><a href=3D"htt=
+p://stats.info.cine-news.fr/l/62575332/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_=
+2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"=
+text-decoration:none;"><img  border=3D"0" height=3D"43" src=3D"http://a=
+ssets.vftraining.net/LANDINGS/FR/centerparcs/2017-03-15/images2/img24.j=
+pg" style=3D"display:block" width=3D"408" /></a></td>=0A		</tr>=0A	</tb=
+ody>=0A</table>=0A=0A<table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" width=3D"550">=0A	<tbody>=0A		<tr>=0A			<td bgcol=
+or=3D"#ffffff" style=3D"text-align:center;background-color:#ffffff;"><a=
+ href=3D"http://stats.info.cine-news.fr/l/62575333/0IbEyYU_2bG2hq8KYlcr=
+qFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.ht=
+m" style=3D"text-decoration:none;"><img  border=3D"0" height=3D"30" src=
+=3D"http://assets.vftraining.net/LANDINGS/FR/centerparcs/2017-03-15/ima=
+ges2/img25.jpg" style=3D"display:block" width=3D"52" /></a></td>=0A			<=
+td bgcolor=3D"#ffffff" height=3D"30" style=3D"text-align:center;backgro=
+und-color:#ffffff;" width=3D"80"><a href=3D"http://stats.info.cine-news=
+.fr/l/62575334/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7Xg=
+aTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoration:none;"><=
+font style=3D"font-family: Arial black, Helvetica; line-height: 11px; f=
+ont-size:9px; color:#016631; text-decoration:none;">4 personnes,<br />=0A=
+			3 nuits </font> </a></td>=0A			<td bgcolor=3D"#ffffff" style=3D"text=
+-align:center;background-color:#ffffff;"><a href=3D"http://stats.info.c=
+ine-news.fr/l/62575335/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pK=
+W3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoration:=
+none;"><img  border=3D"0" height=3D"30" src=3D"http://assets.vftraining=
+.net/LANDINGS/FR/centerparcs/2017-03-15/images2/img27.jpg" style=3D"dis=
+play:block" width=3D"418" /></a></td>=0A		</tr>=0A	</tbody>=0A</table>=0A=
+=0A<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"550">=0A	<tbody>=0A		<tr>=0A			<td bgcolor=3D"#ffffff" sty=
+le=3D"text-align:center;background-color:#ffffff;"><a href=3D"http://st=
+ats.info.cine-news.fr/l/62575336/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty=
+7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-d=
+ecoration:none;"><img  border=3D"0" height=3D"4" src=3D"http://assets.v=
+ftraining.net/LANDINGS/FR/centerparcs/2017-03-15/images2/img28.jpg" sty=
+le=3D"display:block" width=3D"550" /></a></td>=0A		</tr>=0A	</tbody>=0A=
+</table>=0A=0A<table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" width=3D"550">=0A	<tbody>=0A		<tr>=0A			<td bgcolor=3D"=
+#ffffff" style=3D"text-align:center;background-color:#ffffff;"><a href=3D=
+"http://stats.info.cine-news.fr/l/62575337/0IbEyYU_2bG2hq8KYlcrqFc6KOfD=
+LBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=
+=3D"text-decoration:none;"><img  border=3D"0" height=3D"35" src=3D"http=
+://assets.vftraining.net/LANDINGS/FR/centerparcs/2017-03-15/images2/img=
+29.jpg" style=3D"display:block" width=3D"28" /></a></td>=0A			<td bgcol=
+or=3D"#ff9c16" height=3D"35" style=3D"text-align:center;background-colo=
+r:#ff9c16;" width=3D"131"><a href=3D"http://stats.info.cine-news.fr/l/6=
+2575338/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5=
+JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoration:none;"><font st=
+yle=3D"font-family: Helvetica, Arial; font-size:16px; color:#ffffff; te=
+xt-decoration:none;"><b>J&#39;EN PROFITE</b> </font> </a></td>=0A			<td=
+ bgcolor=3D"#ffffff" style=3D"text-align:center;background-color:#fffff=
+f;"><a href=3D"http://stats.info.cine-news.fr/l/62575339/0IbEyYU_2bG2hq=
+8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3=
+d/i.htm" style=3D"text-decoration:none;"><img  border=3D"0" height=3D"3=
+5" src=3D"http://assets.vftraining.net/LANDINGS/FR/centerparcs/2017-03-=
+15/images2/img31.jpg" style=3D"display:block" width=3D"391" /></a></td>=
+=0A		</tr>=0A	</tbody>=0A</table>=0A=0A<table align=3D"center" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"550">=0A	<tbody>=0A		<=
+tr>=0A			<td bgcolor=3D"#ffffff" style=3D"text-align:center;background-=
+color:#ffffff;"><a href=3D"http://stats.info.cine-news.fr/l/62575340/0I=
+bEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69v=
+A8aQr_2fZY_3d/i.htm" style=3D"text-decoration:none;"><img  border=3D"0"=
+ height=3D"150" src=3D"http://assets.vftraining.net/LANDINGS/FR/centerp=
+arcs/2017-03-15/images2/img32.jpg" style=3D"display:block" width=3D"550=
+" /></a></td>=0A		</tr>=0A	</tbody>=0A</table>=0A=0A<table align=3D"cen=
+ter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"550">=0A=
+	<tbody>=0A		<tr>=0A			<td bgcolor=3D"#ffffff" style=3D"text-align:cent=
+er;background-color:#ffffff;"><a href=3D"http://stats.info.cine-news.fr=
+/l/62575341/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt=
+_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoration:none;"><img=
+  border=3D"0" height=3D"21" src=3D"http://assets.vftraining.net/LANDIN=
+GS/FR/centerparcs/2017-03-15/images2/img33.jpg" style=3D"display:block"=
+ width=3D"15" /></a></td>=0A			<td bgcolor=3D"#58b013" height=3D"21" st=
+yle=3D"text-align:center;background-color:#58b013;" width=3D"161"><a hr=
+ef=3D"http://stats.info.cine-news.fr/l/62575342/0IbEyYU_2bG2hq8KYlcrqFc=
+6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" =
+style=3D"text-decoration:none;"><font style=3D"font-family: Helvetica, =
+Arial; font-size:10px; color:#ffffff; text-decoration:none;"><b>Sp&eacu=
+te;cial P&acirc;ques</b> </font> </a></td>=0A			<td bgcolor=3D"#ffffff"=
+ style=3D"text-align:center;background-color:#ffffff;"><a href=3D"http:=
+//stats.info.cine-news.fr/l/62575343/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b=
+5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"te=
+xt-decoration:none;"><img  border=3D"0" height=3D"21" src=3D"http://ass=
+ets.vftraining.net/LANDINGS/FR/centerparcs/2017-03-15/images2/img35.jpg=
+" style=3D"display:block" width=3D"20" /></a></td>=0A			<td bgcolor=3D"=
+#58b013" height=3D"21" style=3D"text-align:center;background-color:#58b=
+013;" width=3D"157"><a href=3D"http://stats.info.cine-news.fr/l/6257534=
+4/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoS=
+r69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoration:none;"><font style=3D=
+"font-family: Helvetica, Arial; font-size:10px; color:#ffffff; text-dec=
+oration:none;"><b>Brunch de P&acirc;ques !</b> </font> </a></td>=0A			<=
+td bgcolor=3D"#ffffff" style=3D"text-align:center;background-color:#fff=
+fff;"><a href=3D"http://stats.info.cine-news.fr/l/62575345/0IbEyYU_2bG2=
+hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY=
+_3d/i.htm" style=3D"text-decoration:none;"><img  border=3D"0" height=3D=
+"21" src=3D"http://assets.vftraining.net/LANDINGS/FR/centerparcs/2017-0=
+3-15/images2/img37.jpg" style=3D"display:block" width=3D"24" /></a></td=
+>=0A			<td bgcolor=3D"#58b013" height=3D"21" style=3D"text-align:center=
+;background-color:#58b013;" width=3D"152"><a href=3D"http://stats.info.=
+cine-news.fr/l/62575346/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4p=
+KW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoration=
+:none;"><font style=3D"font-family: Helvetica, Arial; font-size:10px; c=
+olor:#ffffff; text-decoration:none;"><b>Nos activit&eacute;s incontourn=
+ables</b> </font> </a></td>=0A			<td bgcolor=3D"#ffffff" style=3D"text-=
+align:center;background-color:#ffffff;"><a href=3D"http://stats.info.ci=
+ne-news.fr/l/62575347/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW=
+3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoration:n=
+one;"><img  border=3D"0" height=3D"21" src=3D"http://assets.vftraining.=
+net/LANDINGS/FR/centerparcs/2017-03-15/images2/img39.jpg" style=3D"disp=
+lay:block" width=3D"21" /></a></td>=0A		</tr>=0A	</tbody>=0A</table>=0A=
+=0A<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"550">=0A	<tbody>=0A		<tr>=0A			<td bgcolor=3D"#ffffff" sty=
+le=3D"text-align:center;background-color:#ffffff;"><a href=3D"http://st=
+ats.info.cine-news.fr/l/62575348/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty=
+7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-d=
+ecoration:none;"><img  border=3D"0" height=3D"104" src=3D"http://assets=
+.vftraining.net/LANDINGS/FR/centerparcs/2017-03-15/images2/img40.jpg" s=
+tyle=3D"display:block" width=3D"550" /></a></td>=0A		</tr>=0A	</tbody>=0A=
+</table>=0A=0A<table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" width=3D"550">=0A	<tbody>=0A		<tr>=0A			<td bgcolor=3D"=
+#ffffff" style=3D"text-align:center;background-color:#ffffff;"><a href=3D=
+"http://stats.info.cine-news.fr/l/62575349/0IbEyYU_2bG2hq8KYlcrqFc6KOfD=
+LBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=
+=3D"text-decoration:none;"><img  border=3D"0" height=3D"91" src=3D"http=
+://assets.vftraining.net/LANDINGS/FR/centerparcs/2017-03-15/images2/img=
+41.jpg" style=3D"display:block" width=3D"13" /></a></td>=0A			<td bgcol=
+or=3D"#e1e1e1" height=3D"91" style=3D"text-align:left;background-color:=
+#e1e1e1; line-height: 9px; padding-left: 4px; " width=3D"166"><a href=3D=
+"http://stats.info.cine-news.fr/l/62575350/0IbEyYU_2bG2hq8KYlcrqFc6KOfD=
+LBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=
+=3D"text-decoration:none;"><font style=3D"font-family: Helvetica, Arial=
+; font-size:8px; color:#000000; text-decoration:none;">Ne manquez pas l=
+a grande Chasse aux &oelig;ufs de P&acirc;ques<br />=0A			Participez &a=
+grave; nos ateliers cr&eacute;atifs en famille :<br />=0A			peindre des=
+ &oelig;ufs et faire des dessins<br />=0A			en sable de p&acirc;ques or=
+iginaux </font> </a></td>=0A			<td bgcolor=3D"#ffffff" style=3D"text-al=
+ign:center;background-color:#ffffff;"><a href=3D"http://stats.info.cine=
+-news.fr/l/62575351/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3z=
+qJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoration:non=
+e;"><img  border=3D"0" height=3D"91" src=3D"http://assets.vftraining.ne=
+t/LANDINGS/FR/centerparcs/2017-03-15/images2/img43.jpg" style=3D"displa=
+y:block" width=3D"13" /></a></td>=0A			<td bgcolor=3D"#e1e1e1" height=3D=
+"91" style=3D"text-align:left;background-color:#e1e1e1; line-height: 9p=
+x; padding-left: 4px; " width=3D"166"><a href=3D"http://stats.info.cine=
+-news.fr/l/62575352/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3z=
+qJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoration:non=
+e;"><font style=3D"font-family: Helvetica, Arial; font-size:8px; color:=
+#000000; text-decoration:none;">Puisque P&acirc;ques est aussi une p&ea=
+cute;riode riche en gourmandises, vous ne r&eacute;sisterez pas &agrave=
+; l&rsquo;appel de notre Brunch de P&acirc;ques &OElig;ufs, saumon, vie=
+nnoiseries, pain sp&eacute;ciaux, et fontaine de chocolat vous y attend=
+ent notamment, et raviront vos papilles. Avec l&rsquo;Atelier Chocolat,=
+ vos enfants r&eacute;aliseront de nombreuses cr&eacute;ations autour d=
+u chocolat. </font> </a></td>=0A			<td bgcolor=3D"#ffffff" style=3D"tex=
+t-align:center;background-color:#ffffff;"><a href=3D"http://stats.info.=
+cine-news.fr/l/62575353/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4p=
+KW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoration=
+:none;"><img  border=3D"0" height=3D"91" src=3D"http://assets.vftrainin=
+g.net/LANDINGS/FR/centerparcs/2017-03-15/images2/img45.jpg" style=3D"di=
+splay:block" width=3D"13" /></a></td>=0A			<td bgcolor=3D"#e1e1e1" heig=
+ht=3D"91" style=3D"text-align:left;background-color:#e1e1e1; line-heigh=
+t: 9px; padding-left: 4px; " width=3D"166"><a href=3D"http://stats.info=
+.cine-news.fr/l/62575354/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4=
+pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoratio=
+n:none;"><font style=3D"font-family: Helvetica, Arial; font-size:8px; c=
+olor:#000000; text-decoration:none;">- Aqua Mundo tropical &agrave; 29&=
+deg;<br />=0A			- Jeux et toboggans aquatiques<br />=0A			- Des tonnes =
+d&rsquo;activit&eacute;s </font> </a></td>=0A			<td bgcolor=3D"#ffffff"=
+ style=3D"text-align:center;background-color:#ffffff;"><a href=3D"http:=
+//stats.info.cine-news.fr/l/62575355/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b=
+5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"te=
+xt-decoration:none;"><img  border=3D"0" height=3D"91" src=3D"http://ass=
+ets.vftraining.net/LANDINGS/FR/centerparcs/2017-03-15/images2/img47.jpg=
+" style=3D"display:block" width=3D"13" /></a></td>=0A		</tr>=0A	</tbody=
+>=0A</table>=0A=0A<table align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" width=3D"550">=0A	<tbody>=0A		<tr>=0A			<td bgcolor=
+=3D"#ffffff" style=3D"text-align:center;background-color:#ffffff;"><a h=
+ref=3D"http://stats.info.cine-news.fr/l/62575356/0IbEyYU_2bG2hq8KYlcrqF=
+c6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm"=
+ style=3D"text-decoration:none;"><img  border=3D"0" height=3D"15" src=3D=
+"http://assets.vftraining.net/LANDINGS/FR/centerparcs/2017-03-15/images=
+2/img48.jpg" style=3D"display:block" width=3D"550" /></a></td>=0A		</tr=
+>=0A	</tbody>=0A</table>=0A=0A<table align=3D"center" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" width=3D"550">=0A	<tbody>=0A		<tr>=0A		=
+	<td bgcolor=3D"#ffffff" style=3D"text-align:center;background-color:#f=
+fffff;"><a href=3D"http://stats.info.cine-news.fr/l/62575357/0IbEyYU_2b=
+G2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2f=
+ZY_3d/i.htm" style=3D"text-decoration:none;"><img  border=3D"0" height=3D=
+"38" src=3D"http://assets.vftraining.net/LANDINGS/FR/centerparcs/2017-0=
+3-15/images2/img49.jpg" style=3D"display:block" width=3D"28" /></a></td=
+>=0A			<td bgcolor=3D"#00652f" height=3D"38" style=3D"text-align:left;b=
+ackground-color:#00652f; padding-left: 3px; " width=3D"110"><a href=3D"=
+http://stats.info.cine-news.fr/l/62575358/0IbEyYU_2bG2hq8KYlcrqFc6KOfDL=
+BM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D=
+"text-decoration:none;"><font style=3D"font-family: Helvetica, Arial; f=
+ont-size:11px; color:#ffffff; text-decoration:none;">LE LAC D&rsquo;AIL=
+ETTE<br />=0A			en Picardie </font> </a></td>=0A			<td bgcolor=3D"#ffff=
+ff" style=3D"text-align:center;background-color:#ffffff;"><a href=3D"ht=
+tp://stats.info.cine-news.fr/l/62575359/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM=
+_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D=
+"text-decoration:none;"><img  border=3D"0" height=3D"38" src=3D"http://=
+assets.vftraining.net/LANDINGS/FR/centerparcs/2017-03-15/images2/img51.=
+jpg" style=3D"display:block" width=3D"72" /></a></td>=0A			<td bgcolor=3D=
+"#00652f" height=3D"38" style=3D"text-align:left;background-color:#0065=
+2f; padding-left: 3px; " width=3D"128"><a href=3D"http://stats.info.cin=
+e-news.fr/l/62575360/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3=
+zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoration:no=
+ne;"><font style=3D"font-family: Helvetica, Arial; font-size:11px; colo=
+r:#ffffff; text-decoration:none;">LES TROIS FOR&Ecirc;TS<br />=0A			en =
+Moselle/Lorraine </font> </a></td>=0A			<td bgcolor=3D"#ffffff" style=3D=
+"text-align:center;background-color:#ffffff;"><a href=3D"http://stats.i=
+nfo.cine-news.fr/l/62575361/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPN=
+kq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-decora=
+tion:none;"><img  border=3D"0" height=3D"38" src=3D"http://assets.vftra=
+ining.net/LANDINGS/FR/centerparcs/2017-03-15/images2/img53.jpg" style=3D=
+"display:block" width=3D"56" /></a></td>=0A			<td bgcolor=3D"#00652f" h=
+eight=3D"38" style=3D"text-align:left;background-color:#00652f; padding=
+-left: 3px; " width=3D"156"><a href=3D"http://stats.info.cine-news.fr/l=
+/62575362/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2=
+b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoration:none;"><font =
+style=3D"font-family: Helvetica, Arial; font-size:11px; color:#ffffff; =
+text-decoration:none;">LE BOIS AUX DAIMS<br />=0A			au coeur de la Vien=
+ne </font> </a></td>=0A		</tr>=0A	</tbody>=0A</table>=0A=0A<table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"5=
+50">=0A	<tbody>=0A		<tr>=0A			<td bgcolor=3D"#ffffff" style=3D"text-ali=
+gn:center;background-color:#ffffff;"><a href=3D"http://stats.info.cine-=
+news.fr/l/62575363/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zq=
+J7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoration:none=
+;"><img  border=3D"0" height=3D"34" src=3D"http://assets.vftraining.net=
+/LANDINGS/FR/centerparcs/2017-03-15/images2/img55.jpg" style=3D"display=
+:block" width=3D"28" /></a></td>=0A			<td bgcolor=3D"#00652f" height=3D=
+"34" style=3D"text-align:left;background-color:#00652f; padding-left: 3=
+px; " width=3D"110"><a href=3D"http://stats.info.cine-news.fr/l/6257536=
+4/0IbEyYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoS=
+r69vA8aQr_2fZY_3d/i.htm" style=3D"text-decoration:none;"><font style=3D=
+"font-family: Helvetica, Arial; font-size:11px; color:#ffffff; text-dec=
+oration:none;">LES BOIS-FRANCS<br />=0A			en Normandie </font> </a></td=
+>=0A			<td bgcolor=3D"#ffffff" style=3D"text-align:center;background-co=
+lor:#ffffff;"><a href=3D"http://stats.info.cine-news.fr/l/62575365/0IbE=
+yYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8=
+aQr_2fZY_3d/i.htm" style=3D"text-decoration:none;"><img  border=3D"0" h=
+eight=3D"34" src=3D"http://assets.vftraining.net/LANDINGS/FR/centerparc=
+s/2017-03-15/images2/img57.jpg" style=3D"display:block" width=3D"72" />=
+</a></td>=0A			<td bgcolor=3D"#00652f" height=3D"34" style=3D"text-alig=
+n:left;background-color:#00652f; padding-left: 3px; " width=3D"148"><a =
+href=3D"http://stats.info.cine-news.fr/l/62575366/0IbEyYU_2bG2hq8KYlcrq=
+Fc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm=
+" style=3D"text-decoration:none;"><font style=3D"font-family: Helvetica=
+, Arial; font-size:11px; color:#ffffff; text-decoration:none;">LES HAUT=
+S DE BRUY&Egrave;RES<br />=0A			en Sologne </font> </a></td>=0A			<td b=
+gcolor=3D"#ffffff" style=3D"text-align:center;background-color:#ffffff;=
+"><a href=3D"http://stats.info.cine-news.fr/l/62575367/0IbEyYU_2bG2hq8K=
+YlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/=
+i.htm" style=3D"text-decoration:none;"><img  border=3D"0" height=3D"34"=
+ src=3D"http://assets.vftraining.net/LANDINGS/FR/centerparcs/2017-03-15=
+/images2/img59.jpg" style=3D"display:block" width=3D"192" /></a></td>=0A=
+		</tr>=0A	</tbody>=0A</table>=0A=0A<table align=3D"center" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" width=3D"550">=0A	<tbody>=0A		<tr=
+>=0A			<td bgcolor=3D"#ffffff" style=3D"text-align:center;background-co=
+lor:#ffffff;"><a href=3D"http://stats.info.cine-news.fr/l/62575368/0IbE=
+yYU_2bG2hq8KYlcrqFc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8=
+aQr_2fZY_3d/i.htm" style=3D"text-decoration:none;"><img  border=3D"0" h=
+eight=3D"13" src=3D"http://assets.vftraining.net/LANDINGS/FR/centerparc=
+s/2017-03-15/images2/img60.jpg" style=3D"display:block" width=3D"550" /=
+></a></td>=0A		</tr>=0A	</tbody>=0A</table>=0A=0A<table align=3D"center=
+" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"550">=0A	<t=
+body>=0A		<tr>=0A			<td bgcolor=3D"#ffffff" height=3D"163" style=3D"tex=
+t-align:left; background-color:#ffffff;padding:20px;" width=3D"550"><a =
+href=3D"http://stats.info.cine-news.fr/l/62575369/0IbEyYU_2bG2hq8KYlcrq=
+Fc6KOfDLBM_2b5lty7GWPNkq4pKW3zqJ7XgaTt_2b5JmxFoSr69vA8aQr_2fZY_3d/i.htm=
+" style=3D"text-decoration:none;"><font style=3D"font-family:Arial, san=
+s-serif; font-size:9px; color:#000000; line-height: 10px">* Conditions =
+: (1) Offre valable pour toute r&eacute;servation d&rsquo;un s&eacute;j=
+our de deux nuits minimum au sein de l&rsquo;un des domaines Center Par=
+cs situ&eacute;s en France m&eacute;tropolitaine, Belgique, Allemagne o=
+u Pays-Bas, du 1er janvier 2017 au 31 d&eacute;cembre 2017, pour un s&e=
+acute;jour &agrave; effectuer avant le 19/01/2018. Offre valable pour l=
+es r&eacute;servations effectu&eacute;es aupr&egrave;s de notre centre =
+d&rsquo;appel au 0 891 700 800 (0, 25 &euro; TTC/min) ou du site intern=
+et http://www.centerparcs.fr/fr-fr. Taux de remise applicable sur le ta=
+rif public h&eacute;bergement seul (hors frais de dossier, prestations =
+annexes et frais d&rsquo;acheminement) d&eacute;termin&eacute; en fonct=
+ion de la date de r&eacute;servation : &middot; si r&eacute;servation 6=
+0 jours avant la date d&rsquo;arriv&eacute;e =3D 15%, &middot; si r&eac=
+ute;servation 120 jours avant la date d&rsquo;arriv&eacute;e =3D 20%, &=
+middot; si r&eacute;servation 180 jours et plus avant la date d&rsquo;a=
+rriv&eacute;e =3D 25%. Offre exclusivement r&eacute;serv&eacute;e aux p=
+ersonnes physiques. Offre non r&eacute;troactive, cumulable uniquement =
+avec les avantages &laquo; Jeunes Parents &raquo;** et avantages &laquo=
+; 55 et =2B &raquo;. Offre soumise &agrave;disponibilit&eacute;s selon =
+un stock allou&eacute; &agrave; cet effet (jusqu&rsquo;aux 25 derniers =
+cottages). (2) Offre valable pour toute r&eacute;servation d&rsquo;un s=
+&eacute;jour via l&rsquo;Offre R&eacute;servez T&ocirc;t (ou toute autr=
+e offre mentionnant express&eacute;ment le b&eacute;n&eacute;fice de l&=
+rsquo;Offre Activit&eacute;s-Cadeaux). 3 coupons Activit&eacute;s-Cadea=
+ux par cottage seront remis au r&eacute;servataire au moment de son arr=
+iv&eacute;e sur le Domaine. Vous pouvez r&eacute;server aupr&egrave;s d=
+u Domaine vos activit&eacute;s 3 semaines avant votre arriv&eacute;e. L=
+es coupons, d&rsquo;une valeur unitaire moyenne de 30 &euro;, permetten=
+t de participer &agrave; activit&eacute;s Loisirs. Le nombre de coupons=
+ n&eacute;cessaires pour une activit&eacute; ou un service peut varier =
+en fonction de la valeur de cette activit&eacute; ou de ce service. La =
+combinaison de 2 &agrave; 3 coupons peut &ecirc;tre n&eacute;cessaire p=
+our r&eacute;aliser certaines activit&eacute;s. Ces activit&eacute;s ou=
+ services peuvent &ecirc;tre r&eacute;serv&eacute;s directement aupr&eg=
+rave;s du domaine. Toutes les activit&eacute;s et tous les services pro=
+pos&eacute;s varient en fonction du Domaine choisi. Une liste des Activ=
+it&eacute;s, et leur valorisation en coupons, est disponible sur demand=
+e aupr&egrave;s de la r&eacute;ception du domaine ou sur http://www.cen=
+terparcs.fr/activites-cadeaux. Les coupons Activit&eacute;s-Cadeaux ne =
+peuvent pas &ecirc;tre &eacute;chang&eacute;s contre de l&rsquo;argent =
+et ne peuvent pas faire l&rsquo;objet d&rsquo;un remboursement, m&ecirc=
+;me s&rsquo;ils ne sont pas utilis&eacute;s. Coupons personnels, non ce=
+ssibles. Center Parcs se r&eacute;serve la possibilit&eacute; de modifi=
+er les Activit&eacute;s-Cadeaux et/ou le contenu des Activit&eacute;s-C=
+adeaux &agrave; tout moment. (3) 10% de r&eacute;duction r&eacute;serv&=
+eacute;e aux &laquo; Jeunes Parents &raquo;** et aux personnes de 55 an=
+s et plus. Offre valable pour toute r&eacute;servation d&rsquo;un s&eac=
+ute;jour aux dates et typologies de cottages indiqu&eacute;es sur www.c=
+enterparcs.fr/offres-privilege, au sein de l&rsquo;un des Domaines Cent=
+er Parcs situ&eacute;s en France m&eacute;tropolitaine, Belgique, Allem=
+agne ou Pays-Bas. Pour b&eacute;n&eacute;ficier de la remise, il faut r=
+&eacute;server le s&eacute;jour aupr&egrave;s du Centre d&rsquo;appel d=
+e CENTER PARCS au 0 891 700 800 (0,25 &euro; TTC/min), et demander expr=
+ess&eacute;ment aux conseillers l&rsquo;application de l&rsquo;offre av=
+ant validation et paiement de la r&eacute;servation. Toute demande non =
+formul&eacute;e au moment de la r&eacute;servation ne pourra &ecirc;tre=
+ prise en compte ult&eacute;rieurement. Taux de remise applicable sur l=
+e prix public de l&rsquo;h&eacute;bergement seul (hors frais de dossier=
+, prestations annexes et frais d&rsquo;acheminement). Offre exclusiveme=
+nt r&eacute;serv&eacute;e aux personnes physiques, non r&eacute;troacti=
+ve, cumulable uniquement avec l&rsquo;offre R&eacute;servez T&ocirc;t e=
+t non applicable aux s&eacute;jours cons&eacute;cutifs. **Couple avec e=
+nfant de 5 ans ou moins. </font> </a></td>=0A		</tr>=0A	</tbody>=0A</ta=
+ble>=0A<img border=3D"0" src=3D"http://impfr.tradedoubler.com/imp?type(=
+inv)g(23788416)a(2904711)" /></center>=0A</body>=0A</html>=0A
+
+----=86df817e_5299_4ed4_89dc_8ea534e351f4--
+
+----=d37491f3_9566_4d87_8aa2_8acabb07a4f8--
+
