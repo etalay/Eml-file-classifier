@@ -1,13 +1,15 @@
 from email import message_from_file
 import os
+import unidecode
 
 def file_exists (f):
     return os.path.exists(os.path.join(path, f))
 
-def save_file (fn, cont):
+'''def save_file (fn, cont):
     file = open(os.path.join(path, fn), "wb")
     file.write(cont)
     file.close()
+'''
 
 def construct_name (id, fn):
     id = id.split(".")
@@ -29,7 +31,6 @@ def disgra (s):
 def split_line(s):
     s = s.splitlines()
     return s 
-
 
 def pullout (m, key):
     
@@ -53,7 +54,7 @@ def pullout (m, key):
             cfn = construct_name(key, fn)
             Files[fn] = (cfn, None)
             if file_exists(cfn): return Text, Html, Files, 1
-            save_file(cfn, m.get_payload(decode=True))
+            #save_file(cfn, m.get_payload(decode=True))
             return Text, Html, Files, 1
         # Not an attachment!
         # See where this belongs. Text, Html or some other data:
@@ -78,7 +79,7 @@ def pullout (m, key):
             cfn = construct_name(key, fn)
             Files[fn] = (cfn, id)
             if file_exists(cfn): return Text, Html, Files, 1
-            save_file(cfn, m.get_payload(decode=True))
+            #save_file(cfn, m.get_payload(decode=True))
         return Text, Html, Files, 1
     # This IS a multipart message.
     # So, we iterate over it and call pullout() recursively for each part.
@@ -111,25 +112,20 @@ def extract (msgfile, key):
     word_list = []
     label_value = 0
     foo = open('Label of eml ', 'a')
-    
     for line in Text:
         for word in line.split():
             word_list.append(word)
-    print("Word List : ",word_list)
+    #print("Word List : ",word_list)
+
     
-    matchers = ['Visualiser', 'rachat']
+    matchers = ['stage', 'emploi']
     matching = [s for s in word_list if any(xs in s for xs in matchers)]
     
     if( not matching):
         label_value = 0
     else:
         label_value = 1 
-    foo.write(str(word_list)+'\n'+ str(label_value)+'\n')
-    
-    
-    
-  
-
+    foo.write( key +": "+ str(label_value)+'\n')
     
     
     msg = {"Subject": Subject,"Text": Text}
@@ -143,13 +139,18 @@ def caption (origin):
 
 
 import glob
-path = 'C:/Users/etalay/eclipse-workspace/Jupyter_Pise/eml/*.eml'
+path = 'C:/Users/etalay/eclipse-workspace/Eml File Classifer/eml/*.eml'
+
 files = glob.glob(path)
+
+print(files)
 
 
 for name in files:
         with open(name,'r') as f:
             print extract(f, f.name)
+   
+            
             
             
             
